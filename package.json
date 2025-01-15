@@ -1,5 +1,25 @@
 {
   "dependencies": {
     "discord.js": "^14.17.3"
-  }
+  },
+  "name": "test-bot",
+  "version": "1.0.0",
+  "description": "以下のサイトを参考にして学んだ\r https://www.geeklibrary.jp/counter-attack/discord-js-bot/#%25e3%2582%25b9%25e3%2583%25a9%25e3%2583%2583%25e3%2582%25b7%25e3%2583%25a5%25e3%2582%25b3%25e3%2583%259e%25e3%2583%25b3%25e3%2583%2589%25e3%2581%25ae%25e4%25bd%259c%25e6%2588%2590",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/65535space/try_discord_bot_create.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/65535space/try_discord_bot_create/issues"
+  },
+  "homepage": "https://github.com/65535space/try_discord_bot_create#readme",
+  "devDependencies": {}
 }

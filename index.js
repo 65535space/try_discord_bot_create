@@ -1,11 +1,14 @@
 // hey.jsのmodule.exportsを呼び出す
-const heyFile = require('./commands/hey.js');
+import { data, execute } from './commands/hey.js';
 
 // discord.jsライブラリの中から必要な設定を呼び出す。
-const { Client, Events, GatewayIntentBits } = require('discord.js');
+import { Client, Events, GatewayIntentBits } from 'discord.js';
 
 // 設定ファイルからトークン情報を呼び出し、変数に保存します
-const {token} = require('./config.json');
+// JSONファイルの読み込みにはassertメソッドを使わないといけない
+import config from './config.json' with { type: 'json' };
+const { token } = config;
+
 // クライアントインスタンスと呼ばれるオブジェクトを作成する
 const client = new Client({ intents: [GatewayIntentBits.Guilds]});
 
@@ -24,9 +27,9 @@ client.on(Events.InteractionCreate, async interaction => {
     if (!interaction.isChatInputCommand()) return;
 
     // heyコマンドに対する処理
-    if (interaction.commandName === heyFile.data.name){
+    if (interaction.commandName === data.name){
         try {
-            await heyFile.execute(interaction);
+            await execute(interaction);
         } catch (error){
             console.error(error);
             if(interaction.replied || interaction.deferred){
